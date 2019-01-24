@@ -330,3 +330,13 @@ Epoch 19/20
 Epoch 20/20
 25000/25000 [==============================] - 9s 372us/step - loss: 0.0215 - acc: 0.9919 - val_loss: 1.7274 - val_acc: 0.7263
 ```
+
+# 参考
+
+https://github.com/hecongqing/TextClassification
+
+https://github.com/Cheneng/DPCNN
+
+https://zhuanlan.zhihu.com/p/35457093
+
+https://mp.weixin.qq.com/s/qsTvdz9Z6hCsIXZXk8RRqA
