@@ -12,7 +12,7 @@ DPCNN详解
 
 > 网络结构如图所示，详细解释如下：
 
-img1
+![image](https://github.com/ShaoQiBNU/NLP-DPCNN/blob/master/image/1.png)
 
 ## (一) Region embedding——to do 进一步确认
 
@@ -44,13 +44,13 @@ img1
 
 > 论文里采用的卷积类型是等长卷积，卷积核大小为3，步长 s=1，两端补零 p=(m-1)/2，如图所示：
 
-Img2
+![image](https://github.com/ShaoQiBNU/NLP-DPCNN/blob/master/image/2.jpg)
 
 ## (三) 池化
 
 > 论文里在每一个卷积block之后采用max-pool，size=3，stride=2，序列长度会变成原来的一半，其能够感知到的文本片段就比之前长了一倍。如图所示：
 
-Img3
+![image](https://github.com/ShaoQiBNU/NLP-DPCNN/blob/master/image/3.jpg)
 
 **注意：图中的max pool的size=2**
 
@@ -68,11 +68,12 @@ Img3
 >
 > ResNet中提出的shortcut-connection/skip-connection/residual-connection（残差连接）就是一种非常简单、合理、有效的解决方案。每个block的输入在初始阶段容易是0而无法激活，直接用一条线把region embedding层连接到每个block的输入乃至最终的池化层/输出层。如图所示：
 
-Img3
+![image](https://github.com/ShaoQiBNU/NLP-DPCNN/blob/master/image/4.png)
 
 > 另外，作者采用的是pre-activation，即先激活再卷积：
 
-Img4
+![image](https://github.com/ShaoQiBNU/NLP-DPCNN/blob/master/image/5-1.png)
+![image](https://github.com/ShaoQiBNU/NLP-DPCNN/blob/master/image/5-2.png)
 
 ## (六) 总结
 
@@ -82,7 +83,7 @@ Img4
 >
 > 这导致序列长度随着网络加深呈现金字塔（Pyramid）形状，因此作者将这种深度定制的简化版ResNet称之为Deep “Pyramid” CNN。
 
-Img5
+![image](https://github.com/ShaoQiBNU/NLP-DPCNN/blob/master/image/6.png)
 
 # 三. 代码
 
